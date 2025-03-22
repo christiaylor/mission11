@@ -1,15 +1,15 @@
 import './App.css';
 import Fingerprint from './Fingerprint';
-import BookList from './ProjectList';
-import CookieConsent from 'react-cookie-consent';
+import BookList from './BookList';
+// import CookieConsent from 'react-cookie-consent';
 
 function App() {
   return (
     <>
       <BookList />
-      <CookieConsent>
+      {/* <CookieConsent>
         This website uses cookies to enhance the user experience.
-      </CookieConsent>
+      </CookieConsent> */}
       <Fingerprint />
     </>
   );

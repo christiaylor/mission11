@@ -14,33 +14,40 @@ namespace mission11.API.Controllers
             _bookContext = temp;
         }
 
-        //[HttpGet]
-        //public IActionResult GetProjects(int pageLength = 5, int pageNum = 1)
-        //{
-        //    HttpContext.Response.Cookies.Append("FavoriteProjectType", "Borehole Well and Hand Pump", new CookieOptions
-        //    {
-        //        HttpOnly = true,
-        //        Secure = true,
-        //        SameSite = SameSiteMode.Strict,
-        //        Expires = DateTime.Now.AddMinutes(5),
-        //    });
 
+    [HttpGet]
+    public IActionResult GetBooks(
+        int pageLength = 5,
+        int pageNum = 1,
+        string sortBy = "title",
+        string sortOrder = "asc")
 
-        //        var something = _bookContext.Books
-        //        .Skip((pageNum -1) * pageLength)
-        //        .Take(pageLength)
-        //        .ToList();
+    {
+    var query = _bookContext.Books.AsQueryable();
 
-        //        var totalNumProjects = _bookContext.Books.Count();
+    // Apply sorting
+    if (sortBy.ToLower() == "title")
+    {
+        query = sortOrder.ToLower() == "desc"
+            ? query.OrderByDescending(b => b.Title)
+            : query.OrderBy(b => b.Title);
+    }
 
-        //        var someObject = new
-        //        {
-        //            Projects = something,
-        //            TotalNumProjects = totalNumProjects
-        //        };
+    var totalNumBooks = query.Count();
 
-        //        return Ok(someObject);
+    var books = query
+        .Skip((pageNum - 1) * pageLength)
+        .Take(pageLength)
+        .ToList();
 
-        //    }
+    var response = new
+    {
+        Books = books,
+        TotalNumBooks = totalNumBooks
+    };
+
+    return Ok(response);
+}
+
     }
 }
