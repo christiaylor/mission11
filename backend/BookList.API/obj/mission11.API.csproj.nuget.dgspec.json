@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\OneDrive\\Desktop\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj": {}
+    "C:\\Users\\chris\\Documents\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\OneDrive\\Desktop\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj": {
+    "C:\\Users\\chris\\Documents\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\OneDrive\\Desktop\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\Documents\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj",
         "projectName": "mission11.API",
-        "projectPath": "C:\\Users\\chris\\OneDrive\\Desktop\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj",
+        "projectPath": "C:\\Users\\chris\\Documents\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\mission11.API.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\OneDrive\\Desktop\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\obj\\",
+        "outputPath": "C:\\Users\\chris\\Documents\\2025 Junior Core\\413\\mission11\\backend\\BookList.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

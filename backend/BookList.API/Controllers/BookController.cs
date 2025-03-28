@@ -15,25 +15,31 @@ namespace mission11.API.Controllers
         }
 
 
-    [HttpGet]
+    [HttpGet("all")]
     public IActionResult GetBooks(
         int pageLength = 5,
         int pageNum = 1,
-        string sortBy = "title",
-        string sortOrder = "asc")
-
+        [FromQuery]
+        List<string>? categories= null)
+        //string sortBy = "title",
+        //string sortOrder = "asc"
+        {
+            var query = _bookContext.Books.AsQueryable();
+    if (categories != null && categories.Any())
     {
-    var query = _bookContext.Books.AsQueryable();
-
-    // Apply sorting
-    if (sortBy.ToLower() == "title")
-    {
-        query = sortOrder.ToLower() == "desc"
-            ? query.OrderByDescending(b => b.Title)
-            : query.OrderBy(b => b.Title);
+        query = query.Where(b => categories.Contains(b.Category));
     }
 
-    var totalNumBooks = query.Count();
+
+            // Apply sorting
+            //if (sortBy.ToLower() == "title")
+            //{
+            //    query = sortOrder.ToLower() == "desc"
+            //        ? query.OrderByDescending(b => b.Title)
+            //        : query.OrderBy(b => b.Title);
+            //}
+
+            var totalNumBooks = query.Count();
 
     var books = query
         .Skip((pageNum - 1) * pageLength)
@@ -48,6 +54,18 @@ namespace mission11.API.Controllers
 
     return Ok(response);
 }
+
+        [HttpGet("GetCategories")]
+        public IActionResult GetProjectTypes()
+        {
+            var projectTypes = _bookContext.Books
+                .Select(p => p.Category)
+                .Distinct()
+                .ToList();
+
+            return Ok(projectTypes);
+
+        }
 
     }
 }
