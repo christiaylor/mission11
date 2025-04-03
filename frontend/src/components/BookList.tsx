@@ -16,7 +16,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
         .map((cat) => `categories=${encodeURIComponent(cat)}`)
         .join('&');
 
-      const url = `https://localhost:5000/api/Book/all?pageLength=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`;
+      const url = `https://fakeamazon-taylor-backend-a4eqb4hvakeshbg8.eastus-01.azurewebsites.net/api/Book/all?pageLength=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`;
 
       const response = await fetch(url);
       const data = await response.json();
