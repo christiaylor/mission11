@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BooksPage from './pages/BooksPage';
 import CartPage from './pages/CartPage';
 import AddToCart from './pages/AddToCartPage';
+import AdminPage from './pages/AdminPage';
 
 // import CookieConsent from 'react-cookie-consent';
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/buy/:title/:bookID/:price" element={<AddToCart />} />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </Router>
       </CartProvider>
