@@ -5,7 +5,7 @@ interface FetchBooksResponse {
   totalNumBooks: number;
 }
 
-const API_URL = 'https://localhost:5000';
+const API_URL = 'https://localhost:5000/api/Book';
 
 export const fetchBooks = async (
   pageSize: number,
@@ -17,7 +17,7 @@ export const fetchBooks = async (
       .map((cat) => `categories=${encodeURIComponent(cat)}`)
       .join('&');
 
-    const url = `${API_URL}/api/Book/all?pageLength=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`;
+    const url = `${API_URL}/all?pageLength=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`;
     const response = await fetch(url);
 
     if (!response.ok) {

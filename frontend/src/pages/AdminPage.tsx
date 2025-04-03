@@ -3,7 +3,7 @@ import { Book } from '../types/Book';
 import {
   deleteBook as deleteBook,
   fetchBooks as fetchBooks,
-} from '../api/ProjectsAPI';
+} from '../api/BooksAPI';
 import Pagination from '../components/Pagination';
 import NewBookForm from '../components/NewBookForm';
 import EditBookForm from '../components/EditBookForm';
