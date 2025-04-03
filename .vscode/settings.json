@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/29ad998a-3146-457e-bd78-74be83010e4d/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/FakeAmazon-Taylor-Backend",
+  "appService.deploySubpath": "backend\\BookList.API\\publish"
+}
