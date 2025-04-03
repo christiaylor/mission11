@@ -13,7 +13,8 @@ function CategoryFilter({
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const url = 'https://localhost:5000/api/Book/GetCategories';
+        const url =
+          'https://fakeamazon-taylor-backend-a4eqb4hvakeshbg8.eastus-01.azurewebsites.net/api/Book/GetCategories';
         const response = await fetch(url);
         const data = await response.json();
         console.log('Fetched categories: ', data);
