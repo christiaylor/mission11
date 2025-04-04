@@ -39,9 +39,11 @@ const AdminPage = () => {
     if (!confirmDelete) return;
     try {
       await deleteBook(bookID);
-      const filteredBooks = books.filter((b) => b.bookID !== b.bookID);
-      console.log(JSON.stringify(filteredBooks));
+      const filteredBooks = books.filter((b) => b.bookID !== bookID);
       setBooks(filteredBooks);
+      // setBooks(prev => {
+      //   return prev.splice(prev.find(tempBook => tempBook.bookID = bookID),)
+      // });
     } catch (error) {
       alert('Failed to delete book. Please try again.');
     }
